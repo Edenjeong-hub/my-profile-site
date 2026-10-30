@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>정호진 | IT 프로젝트 매니저</title>
+  <meta name="description" content="IT 개발업체 16년차 프로젝트 매니저 정호진의 프로필 사이트" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class' };
+    // 기본은 다크(IT 테마). 사용자가 라이트를 선택했을 때만 해제
+    if (localStorage.getItem('theme') === 'light') document.documentElement.classList.remove('dark');
+  </script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="fixed top-0 inset-x-0 z-50 backdrop-blur bg-white/70 dark:bg-[#0a0e1a]/70 border-b border-slate-200 dark:border-slate-800">
+    <nav class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#home" class="mono font-bold heading"><span class="accent">&lt;</span>정호진<span class="accent"> /&gt;</span></a>
+      <ul class="hidden md:flex items-center gap-8 text-sm font-medium mono">
+        <li><a href="#about" class="nav-link">about</a></li>
+        <li><a href="#skills" class="nav-link">skills</a></li>
+        <li><a href="#projects" class="nav-link">projects</a></li>
+        <li><a href="#contact" class="nav-link">contact</a></li>
+        <li>
+          <button id="theme-toggle" type="button" aria-label="테마 전환"
+            class="p-2 rounded-lg hover:bg-slate-500/10">🌓</button>
+        </li>
+      </ul>
+      <div class="md:hidden flex items-center gap-2">
+        <button id="theme-toggle-m" type="button" aria-label="테마 전환" class="p-2 rounded-lg">🌓</button>
+        <button id="menu-btn" type="button" aria-label="메뉴 열기" aria-expanded="false" class="p-2 rounded-lg">☰</button>
+      </div>
+    </nav>
+    <ul id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-3 text-sm font-medium mono">
+      <li><a href="#about" class="block">about</a></li>
+      <li><a href="#skills" class="block">skills</a></li>
+      <li><a href="#projects" class="block">projects</a></li>
+      <li><a href="#contact" class="block">contact</a></li>
+    </ul>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section id="home" class="min-h-screen flex items-center pt-24 pb-12">
+      <div class="max-w-5xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center reveal">
+        <div>
+          <p class="mono accent text-sm mb-4">// Hello, World!</p>
+          <h1 class="text-4xl sm:text-6xl font-extrabold heading leading-tight">
+            안녕하세요,<br /><span class="gradient-text">정호진</span>입니다.
+          </h1>
+          <p class="mt-6 text-lg leading-relaxed">
+            IT 개발업체에서 <strong class="heading">16년째</strong> 프로젝트 매니저로 재직 중입니다.
+            일정과 리스크, 사람 사이의 균형을 맞춰 프로젝트를 끝까지 배포(Deploy)합니다.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="#projects" class="btn-primary">프로젝트 보기</a>
+            <a href="#contact" class="btn-ghost">연락하기</a>
+          </div>
+        </div>
+
+        <!-- 터미널 카드 -->
+        <div class="terminal mono text-sm" aria-hidden="true">
+          <div class="terminal-bar">
+            <span class="dot bg-red-400"></span><span class="dot bg-yellow-400"></span><span class="dot bg-green-400"></span>
+            <span class="ml-3 text-xs text-slate-500">hojin@pm:~</span>
+          </div>
+          <div class="p-5 space-y-1 leading-relaxed min-h-[15rem]">
+            <p><span class="accent-2">$</span> whoami</p>
+            <p>정호진 / IT Project Manager</p>
+            <p class="pt-2"><span class="accent-2">$</span> cat experience.txt</p>
+            <p>16 years in software delivery</p>
+            <p class="pt-2"><span class="accent-2">$</span> ./status --projects</p>
+            <p><span class="accent-2">✔</span> on-time &nbsp; <span class="accent-2">✔</span> on-budget &nbsp; <span class="accent-2">✔</span> shipped</p>
+            <p class="pt-2"><span class="accent-2">$</span> <span id="typed" class="cursor"></span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="py-24">
+      <div class="max-w-5xl mx-auto px-6 reveal">
+        <h2 class="section-title heading" data-idx="01.">// 소개</h2>
+        <p class="max-w-2xl leading-relaxed">
+          안녕하세요, IT 개발업체에 16년째 재직 중인 프로젝트 매니저입니다.
+          (샘플) 기획부터 출시, 운영까지 전 과정을 이끌며 개발·디자인·고객 사이의 소통을 책임져 왔습니다.
+        </p>
+        <dl class="mt-10 grid grid-cols-2 sm:grid-cols-3 gap-6">
+          <div class="card"><dt class="mono text-xs text-slate-500">experience</dt><dd class="text-3xl font-bold gradient-text mono">16yr</dd></div>
+          <div class="card"><dt class="mono text-xs text-slate-500">projects</dt><dd class="text-3xl font-bold gradient-text mono">00+</dd></div>
+          <div class="card"><dt class="mono text-xs text-slate-500">max_team_size</dt><dd class="text-3xl font-bold gradient-text mono">00</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- Skills (샘플: 실제 역량·도구로 교체) -->
+    <section id="skills" class="py-24">
+      <div class="max-w-5xl mx-auto px-6 reveal">
+        <h2 class="section-title heading" data-idx="02.">// 역량 &amp; 도구</h2>
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div class="card">
+            <h3 class="mono font-semibold heading mb-4"><span class="accent">&gt;</span> management</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="badge">일정 관리</span><span class="badge">리스크 관리</span>
+              <span class="badge">이해관계자 관리</span><span class="badge">예산 관리</span>
+              <span class="badge">Agile / Scrum</span><span class="badge">Waterfall</span>
+            </div>
+          </div>
+          <div class="card">
+            <h3 class="mono font-semibold heading mb-4"><span class="accent">&gt;</span> tools</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="badge">Jira</span><span class="badge">Confluence</span>
+              <span class="badge">Slack</span><span class="badge">MS Project</span>
+              <span class="badge">Excel</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects (샘플: 비공개 정보는 제외하고 역할·규모·성과 중심으로 교체) -->
+    <section id="projects" class="py-24">
+      <div class="max-w-5xl mx-auto px-6 reveal">
+        <h2 class="section-title heading" data-idx="03.">// 프로젝트</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <article class="card">
+            <p class="mono text-xs accent-2 mb-2">● deployed</p>
+            <h3 class="font-semibold heading">프로젝트 A (샘플)</h3>
+            <p class="mt-2 text-sm leading-relaxed">대규모 시스템 구축 PM. 12개월, 팀 00명 규모로 일정 내 오픈.</p>
+            <div class="mt-4 flex flex-wrap gap-2"><span class="badge">PM</span><span class="badge">금융</span></div>
+          </article>
+          <article class="card">
+            <p class="mono text-xs accent-2 mb-2">● deployed</p>
+            <h3 class="font-semibold heading">프로젝트 B (샘플)</h3>
+            <p class="mt-2 text-sm leading-relaxed">레거시 시스템 현대화. 단계별 전환으로 서비스 중단 없이 이관.</p>
+            <div class="mt-4 flex flex-wrap gap-2"><span class="badge">마이그레이션</span><span class="badge">제조</span></div>
+          </article>
+          <article class="card">
+            <p class="mono text-xs accent-2 mb-2">● deployed</p>
+            <h3 class="font-semibold heading">프로젝트 C (샘플)</h3>
+            <p class="mt-2 text-sm leading-relaxed">애자일 조직 전환 리드. 배포 주기를 월 1회에서 주 1회로 단축.</p>
+            <div class="mt-4 flex flex-wrap gap-2"><span class="badge">애자일</span><span class="badge">프로세스</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact (샘플: 실제 주소로 교체) -->
+    <section id="contact" class="py-24">
+      <div class="max-w-5xl mx-auto px-6 reveal">
+        <h2 class="section-title heading" data-idx="04.">// 연락처</h2>
+        <p class="mb-6">프로젝트 협업이나 문의는 아래로 편하게 연락 주세요.</p>
+        <div class="flex flex-wrap gap-3">
+          <a href="mailto:your-email@example.com" class="btn-primary">이메일</a>
+          <a href="https://github.com/your-id" target="_blank" rel="noopener noreferrer" class="btn-ghost">GitHub</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="py-8 text-center text-sm mono text-slate-500 border-t border-slate-200 dark:border-slate-800">
+    © <span id="year"></span> 정호진 · built with HTML, CSS, JS
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
